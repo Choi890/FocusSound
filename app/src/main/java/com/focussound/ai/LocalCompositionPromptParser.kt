@@ -10,7 +10,8 @@ import com.focussound.data.FocusMode
 
 class LocalCompositionPromptParser {
     fun parse(prompt: String): CompositionIntent {
-        // Convert free-form prompt text into bounded musical controls for the local composer.
+        // 사용자가 입력한 자연어 프롬프트를 작곡 엔진이 이해할 수 있는 수치와 옵션으로 바꾼다.
+        // 모드, 장르, 템포, 멜로디 밀도, 리듬 밀도, 패드 양을 순서대로 추출해 CompositionIntent를 만든다.
         val text = prompt.trim().ifBlank { "새벽 코딩용, 따뜻한 패드, 멜로디 적게" }
         val normalized = text.lowercase()
         val mode = extractMode(normalized)
@@ -58,7 +59,8 @@ class LocalCompositionPromptParser {
     }
 
     private fun extractTempo(text: String): Int? {
-        // Keep detected BPM inside the calm-focus range used by the synthesis engine.
+        // 프롬프트에 BPM 숫자가 있으면 읽어오되, 집중/수면 음악에 맞는 범위로 제한한다.
+        // 범위를 벗어난 값은 합성 엔진에서 과격한 결과를 만들 수 있어 coerceIn으로 보정한다.
         return Regex("(\\d{2,3})\\s*(bpm|템포)?").find(text)
             ?.groupValues
             ?.getOrNull(1)
@@ -122,7 +124,8 @@ class LocalCompositionPromptParser {
     }
 
     private fun extractMood(text: String): List<String> {
-        // Mood tags are lightweight hints; the composer still falls back to a focus-oriented default.
+        // 분위기 키워드는 실제 음색과 화성 선택에 쓰이는 보조 힌트다.
+        // 아무 키워드도 없으면 기본값을 넣어 작곡 요청이 항상 완성된 의도를 갖도록 한다.
         return buildList {
             if (text.hasAny(PromptKeywordDictionary.warm)) add("따뜻함")
             if (text.hasAny(PromptKeywordDictionary.dark)) add("어두움")
