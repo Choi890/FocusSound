@@ -1,0 +1,753 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 3,
+    "identityHash": "15d5323dbe3bfc63968ddbff64dea826",
+    "entities": [
+      {
+        "tableName": "sound_presets",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `name` TEXT NOT NULL, `mode` TEXT NOT NULL, `soundType` TEXT NOT NULL, `brightness` REAL NOT NULL, `warmth` REAL NOT NULL, `movement` REAL NOT NULL, `createdAtMillis` INTEGER NOT NULL, `lastUsedAtMillis` INTEGER NOT NULL)",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "name",
+            "columnName": "name",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "mode",
+            "columnName": "mode",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "soundType",
+            "columnName": "soundType",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "brightness",
+            "columnName": "brightness",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "warmth",
+            "columnName": "warmth",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "movement",
+            "columnName": "movement",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "createdAtMillis",
+            "columnName": "createdAtMillis",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "lastUsedAtMillis",
+            "columnName": "lastUsedAtMillis",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": true,
+          "columnNames": [
+            "id"
+          ]
+        }
+      },
+      {
+        "tableName": "focus_sessions",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` TEXT NOT NULL, `mode` TEXT NOT NULL, `soundType` TEXT NOT NULL, `durationMinutes` INTEGER NOT NULL, `elapsedSeconds` INTEGER NOT NULL, `startedAtMillis` INTEGER NOT NULL, `endedAtMillis` INTEGER NOT NULL, `focusRating` INTEGER NOT NULL, `fatigueRating` INTEGER NOT NULL, `brightness` REAL NOT NULL, `warmth` REAL NOT NULL, `movement` REAL NOT NULL, `fatigueScore` INTEGER NOT NULL, `completed` INTEGER NOT NULL, `tooBright` INTEGER NOT NULL, `tooMuffled` INTEGER NOT NULL, `tooMuchBass` INTEGER NOT NULL, `patchId` TEXT, `patchName` TEXT, `highCut` REAL NOT NULL, `stereoWidth` REAL NOT NULL, `rainLayerAmount` REAL NOT NULL, `padLayerAmount` REAL NOT NULL, `conditionSnapshotId` INTEGER, `compositionPatchId` TEXT, `compositionPatchName` TEXT, `compositionGenre` TEXT, `melodyDensity` REAL NOT NULL, `rhythmDensity` REAL NOT NULL, `harmonicComplexity` REAL NOT NULL, `melodyAnnoying` INTEGER NOT NULL, `rhythmAnnoying` INTEGER NOT NULL, `harmonyLiked` INTEGER NOT NULL, `tooRepetitive` INTEGER NOT NULL, PRIMARY KEY(`id`))",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "mode",
+            "columnName": "mode",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "soundType",
+            "columnName": "soundType",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "durationMinutes",
+            "columnName": "durationMinutes",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "elapsedSeconds",
+            "columnName": "elapsedSeconds",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "startedAtMillis",
+            "columnName": "startedAtMillis",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "endedAtMillis",
+            "columnName": "endedAtMillis",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "focusRating",
+            "columnName": "focusRating",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "fatigueRating",
+            "columnName": "fatigueRating",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "brightness",
+            "columnName": "brightness",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "warmth",
+            "columnName": "warmth",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "movement",
+            "columnName": "movement",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "fatigueScore",
+            "columnName": "fatigueScore",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "completed",
+            "columnName": "completed",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "tooBright",
+            "columnName": "tooBright",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "tooMuffled",
+            "columnName": "tooMuffled",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "tooMuchBass",
+            "columnName": "tooMuchBass",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "patchId",
+            "columnName": "patchId",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "patchName",
+            "columnName": "patchName",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "highCut",
+            "columnName": "highCut",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "stereoWidth",
+            "columnName": "stereoWidth",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "rainLayerAmount",
+            "columnName": "rainLayerAmount",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "padLayerAmount",
+            "columnName": "padLayerAmount",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "conditionSnapshotId",
+            "columnName": "conditionSnapshotId",
+            "affinity": "INTEGER"
+          },
+          {
+            "fieldPath": "compositionPatchId",
+            "columnName": "compositionPatchId",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "compositionPatchName",
+            "columnName": "compositionPatchName",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "compositionGenre",
+            "columnName": "compositionGenre",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "melodyDensity",
+            "columnName": "melodyDensity",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "rhythmDensity",
+            "columnName": "rhythmDensity",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "harmonicComplexity",
+            "columnName": "harmonicComplexity",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "melodyAnnoying",
+            "columnName": "melodyAnnoying",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "rhythmAnnoying",
+            "columnName": "rhythmAnnoying",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "harmonyLiked",
+            "columnName": "harmonyLiked",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "tooRepetitive",
+            "columnName": "tooRepetitive",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "id"
+          ]
+        }
+      },
+      {
+        "tableName": "sound_patches",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` TEXT NOT NULL, `name` TEXT NOT NULL, `mode` TEXT NOT NULL, `baseNoiseType` TEXT NOT NULL, `brightness` REAL NOT NULL, `warmth` REAL NOT NULL, `movement` REAL NOT NULL, `highCut` REAL NOT NULL, `lowAmount` REAL NOT NULL, `stereoWidth` REAL NOT NULL, `rainLayerAmount` REAL NOT NULL, `padLayerAmount` REAL NOT NULL, `modulationDepth` REAL NOT NULL, `modulationRateHz` REAL NOT NULL, `targetFatigueScore` INTEGER NOT NULL, `durationMinutes` INTEGER NOT NULL, `createdAtMillis` INTEGER NOT NULL, `lastUsedAtMillis` INTEGER NOT NULL, PRIMARY KEY(`id`))",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "name",
+            "columnName": "name",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "mode",
+            "columnName": "mode",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "baseNoiseType",
+            "columnName": "baseNoiseType",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "brightness",
+            "columnName": "brightness",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "warmth",
+            "columnName": "warmth",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "movement",
+            "columnName": "movement",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "highCut",
+            "columnName": "highCut",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "lowAmount",
+            "columnName": "lowAmount",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "stereoWidth",
+            "columnName": "stereoWidth",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "rainLayerAmount",
+            "columnName": "rainLayerAmount",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "padLayerAmount",
+            "columnName": "padLayerAmount",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "modulationDepth",
+            "columnName": "modulationDepth",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "modulationRateHz",
+            "columnName": "modulationRateHz",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "targetFatigueScore",
+            "columnName": "targetFatigueScore",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "durationMinutes",
+            "columnName": "durationMinutes",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "createdAtMillis",
+            "columnName": "createdAtMillis",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "lastUsedAtMillis",
+            "columnName": "lastUsedAtMillis",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "id"
+          ]
+        }
+      },
+      {
+        "tableName": "user_taste_vectors",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`mode` TEXT NOT NULL, `preferredBrightness` REAL NOT NULL, `preferredWarmth` REAL NOT NULL, `preferredMovement` REAL NOT NULL, `preferredHighCut` REAL NOT NULL, `preferredStereoWidth` REAL NOT NULL, `preferredNoiseTypesJson` TEXT NOT NULL, `preferredSessionMinutes` INTEGER NOT NULL, `confidence` REAL NOT NULL, `preferredGenre` TEXT NOT NULL, `preferredTempoMin` INTEGER NOT NULL, `preferredTempoMax` INTEGER NOT NULL, `preferredMelodyDensity` REAL NOT NULL, `preferredRhythmDensity` REAL NOT NULL, `preferredHarmonicComplexity` REAL NOT NULL, `updatedAtMillis` INTEGER NOT NULL, PRIMARY KEY(`mode`))",
+        "fields": [
+          {
+            "fieldPath": "mode",
+            "columnName": "mode",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "preferredBrightness",
+            "columnName": "preferredBrightness",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "preferredWarmth",
+            "columnName": "preferredWarmth",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "preferredMovement",
+            "columnName": "preferredMovement",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "preferredHighCut",
+            "columnName": "preferredHighCut",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "preferredStereoWidth",
+            "columnName": "preferredStereoWidth",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "preferredNoiseTypesJson",
+            "columnName": "preferredNoiseTypesJson",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "preferredSessionMinutes",
+            "columnName": "preferredSessionMinutes",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "confidence",
+            "columnName": "confidence",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "preferredGenre",
+            "columnName": "preferredGenre",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "preferredTempoMin",
+            "columnName": "preferredTempoMin",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "preferredTempoMax",
+            "columnName": "preferredTempoMax",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "preferredMelodyDensity",
+            "columnName": "preferredMelodyDensity",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "preferredRhythmDensity",
+            "columnName": "preferredRhythmDensity",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "preferredHarmonicComplexity",
+            "columnName": "preferredHarmonicComplexity",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "updatedAtMillis",
+            "columnName": "updatedAtMillis",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "mode"
+          ]
+        }
+      },
+      {
+        "tableName": "condition_snapshots",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `sleepMinutes` INTEGER, `sleepDebt` INTEGER NOT NULL, `stepsToday` INTEGER, `restingHeartRate` INTEGER, `selfReportedFatigue` TEXT NOT NULL, `selfReportedMood` TEXT NOT NULL, `timeOfDay` TEXT NOT NULL, `source` TEXT NOT NULL, `createdAtMillis` INTEGER NOT NULL)",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "sleepMinutes",
+            "columnName": "sleepMinutes",
+            "affinity": "INTEGER"
+          },
+          {
+            "fieldPath": "sleepDebt",
+            "columnName": "sleepDebt",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "stepsToday",
+            "columnName": "stepsToday",
+            "affinity": "INTEGER"
+          },
+          {
+            "fieldPath": "restingHeartRate",
+            "columnName": "restingHeartRate",
+            "affinity": "INTEGER"
+          },
+          {
+            "fieldPath": "selfReportedFatigue",
+            "columnName": "selfReportedFatigue",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "selfReportedMood",
+            "columnName": "selfReportedMood",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "timeOfDay",
+            "columnName": "timeOfDay",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "source",
+            "columnName": "source",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "createdAtMillis",
+            "columnName": "createdAtMillis",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": true,
+          "columnNames": [
+            "id"
+          ]
+        }
+      },
+      {
+        "tableName": "composition_patches",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` TEXT NOT NULL, `name` TEXT NOT NULL, `mode` TEXT NOT NULL, `genre` TEXT NOT NULL, `tempoBpm` INTEGER NOT NULL, `keyRoot` TEXT NOT NULL, `keyScaleType` TEXT NOT NULL, `chordProgressionJson` TEXT NOT NULL, `melodyDensity` REAL NOT NULL, `rhythmDensity` REAL NOT NULL, `harmonicComplexity` REAL NOT NULL, `fatigueScore` INTEGER NOT NULL, `durationMinutes` INTEGER NOT NULL, `createdAtMillis` INTEGER NOT NULL, `lastUsedAtMillis` INTEGER NOT NULL, PRIMARY KEY(`id`))",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "name",
+            "columnName": "name",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "mode",
+            "columnName": "mode",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "genre",
+            "columnName": "genre",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "tempoBpm",
+            "columnName": "tempoBpm",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "keyRoot",
+            "columnName": "keyRoot",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "keyScaleType",
+            "columnName": "keyScaleType",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "chordProgressionJson",
+            "columnName": "chordProgressionJson",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "melodyDensity",
+            "columnName": "melodyDensity",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "rhythmDensity",
+            "columnName": "rhythmDensity",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "harmonicComplexity",
+            "columnName": "harmonicComplexity",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "fatigueScore",
+            "columnName": "fatigueScore",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "durationMinutes",
+            "columnName": "durationMinutes",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "createdAtMillis",
+            "columnName": "createdAtMillis",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "lastUsedAtMillis",
+            "columnName": "lastUsedAtMillis",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "id"
+          ]
+        }
+      },
+      {
+        "tableName": "composition_notes",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `patchId` TEXT NOT NULL, `startBeat` REAL NOT NULL, `durationBeats` REAL NOT NULL, `midiNote` INTEGER NOT NULL, `velocity` REAL NOT NULL, `lane` TEXT NOT NULL)",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "patchId",
+            "columnName": "patchId",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "startBeat",
+            "columnName": "startBeat",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "durationBeats",
+            "columnName": "durationBeats",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "midiNote",
+            "columnName": "midiNote",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "velocity",
+            "columnName": "velocity",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "lane",
+            "columnName": "lane",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": true,
+          "columnNames": [
+            "id"
+          ]
+        },
+        "indices": [
+          {
+            "name": "index_composition_notes_patchId",
+            "unique": false,
+            "columnNames": [
+              "patchId"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_composition_notes_patchId` ON `${TABLE_NAME}` (`patchId`)"
+          }
+        ]
+      }
+    ],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '15d5323dbe3bfc63968ddbff64dea826')"
+    ]
+  }
+}

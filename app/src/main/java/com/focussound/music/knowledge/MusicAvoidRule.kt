@@ -1,0 +1,24 @@
+package com.focussound.music.knowledge
+
+enum class MusicAvoidRule {
+    LYRICS,
+    BUSY_MELODY,
+    SUDDEN_TRANSITION,
+    AGGRESSIVE_PERCUSSION,
+    PERCUSSION,
+    SYNCOPATION,
+    BRIGHT_HIGH_REGISTER,
+    FAST_HARMONIC_RHYTHM,
+    LONG_STATIC_PAD
+}
+
+enum class FormType {
+    ABA_VARIATION,
+    CONTINUOUS_VARIATION,
+    SLOW_EVOLUTION,
+    LONG_FADE,
+    LOOP_WITH_VARIATION,
+    GROOVE_FORM,
+    ARC_FORM,
+    BUILD_DROP
+}

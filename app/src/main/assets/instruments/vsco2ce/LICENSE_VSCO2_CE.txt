@@ -1,0 +1,5 @@
+﻿VSCO 2 Community Edition selected WAV samples
+Source: https://versilian-studios.com/vsco-community/
+Project repository: https://github.com/sgossner/VSCO-2-CE
+License: Creative Commons Zero (CC0 / public domain), according to the official VSCO 2 CE page.
+Usage in FocusSound: selected piano, string, contrabass, and flute samples are embedded for local playback only.

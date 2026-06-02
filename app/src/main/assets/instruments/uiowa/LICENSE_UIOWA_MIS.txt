@@ -1,0 +1,5 @@
+University of Iowa Musical Instrument Samples built-in subset
+
+Source: https://theremin.music.uiowa.edu/MIS.html
+Downloaded source AIFF files are converted to short WAV samples for this local sampler demo.
+The University of Iowa MIS page describes the recordings as freely available for download and use in projects. Keep this notice with redistributed builds and review the source page before public distribution.
