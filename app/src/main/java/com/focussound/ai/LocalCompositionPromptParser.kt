@@ -10,6 +10,7 @@ import com.focussound.data.FocusMode
 
 class LocalCompositionPromptParser {
     fun parse(prompt: String): CompositionIntent {
+        // Convert free-form prompt text into bounded musical controls for the local composer.
         val text = prompt.trim().ifBlank { "새벽 코딩용, 따뜻한 패드, 멜로디 적게" }
         val normalized = text.lowercase()
         val mode = extractMode(normalized)
@@ -57,6 +58,7 @@ class LocalCompositionPromptParser {
     }
 
     private fun extractTempo(text: String): Int? {
+        // Keep detected BPM inside the calm-focus range used by the synthesis engine.
         return Regex("(\\d{2,3})\\s*(bpm|템포)?").find(text)
             ?.groupValues
             ?.getOrNull(1)
@@ -120,6 +122,7 @@ class LocalCompositionPromptParser {
     }
 
     private fun extractMood(text: String): List<String> {
+        // Mood tags are lightweight hints; the composer still falls back to a focus-oriented default.
         return buildList {
             if (text.hasAny(PromptKeywordDictionary.warm)) add("따뜻함")
             if (text.hasAny(PromptKeywordDictionary.dark)) add("어두움")
